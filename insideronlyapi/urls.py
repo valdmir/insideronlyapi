@@ -7,7 +7,7 @@ from restapi import views
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
-router.register(r'companies', views.CompanyViewSet)
+router.register(r'companies', views.CompanyListViewSet)
 router.register(r'nationalholiday', views.NationalHolidayViewSet)
 urlpatterns = patterns('',
     # Examples:

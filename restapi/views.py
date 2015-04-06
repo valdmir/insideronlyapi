@@ -6,7 +6,6 @@ from restapi.models import Company,NationalHoliday
 from rest_framework import viewsets
 from restapi.serializer import UserSerializer, GroupSerializer,CompanySerializer,NationalHolidaySerializer
 
-
 class UserViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
@@ -21,9 +20,9 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
-class CompanyViewSet(viewsets.ModelViewSet):
+class CompanyListViewSet(viewsets.ReadOnlyModelViewSet):
     """
-    API endpoint that allows groups to be viewed or edited.
+     This viewset automatically provides `list` and `detail` actions.
     """
     queryset = Company.objects.all()
     serializer_class = CompanySerializer
